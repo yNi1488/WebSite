@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Technologies UA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background: #f0f8ff;
+        }
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        header h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        header p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .appointment-btn, .album-btn {
+            display: inline-block;
+            background: #ffcc00;
+            color: #333;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+            margin: 10px;
+        }
+        .appointment-btn:hover, .album-btn:hover {
+            background: #ff9900;
+            transform: scale(1.05);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background: #2a5298;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        .container {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section {
+            margin-bottom: 80px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: translateY(-10px);
+        }
+        .section h2 {
+            color: #2a5298;
+            font-size: 32px;
+        }
+        .footer {
+            background: #2a5298;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+        }
+        .image-placeholder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 250px;
+            background: #e0e0e0;
+            color: #555;
+            font-size: 20px;
+            border: 2px dashed #ccc;
+            transition: background 0.3s;
+        }
+        .image-placeholder:hover {
+            background: #d0d0d0;
+        }
+        .form-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            z-index: 10;
+            border-radius: 10px;
+        }
+        .form-container.active {
+            display: block;
+        }
+        .form-container input, .form-container textarea, .form-container button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .form-container button {
+            background: #2a5298;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .form-container button:hover {
+            background: #1e3c72;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 5;
+        }
+        .overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Win-Tech UA (Windows Technologies UA)</h1>
+        <p>High-quality windows, doors, and curtains in Ukraine</p>
+        <a href="#" class="appointment-btn" onclick="openForm()">Schedule an Appointment</a>
+        <a href="#" class="album-btn" onclick="window.location.href='album.html'">View Album</a>
+    </header>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <div class="image-placeholder">[Insert company image]</div>
+            <p>Win-Tech UA is a leader in the Ukrainian market, offering top-quality windows, doors, and curtains. We guarantee reliability, style, and performance.</p>
+        </section>
+        <section id="products" class="section">
+            <h2>Our Products</h2>
+            <div class="image-placeholder">[Insert window image]</div>
+            <p><strong>Windows:</strong> Energy-efficient and modern solutions.</p>
+            <div class="image-placeholder">[Insert door image]</div>
+            <p><strong>Doors:</strong> Secure, stylish, and durable.</p>
+            <div class="image-placeholder">[Insert curtain image]</div>
+            <p><strong>Curtains:</strong> Elegant designs to enhance your space.</p>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Get in touch with us for inquiries:</p>
+            <p>Email: info@win-tech.ua</p>
+            <p>Phone: +1(609)802-9621</p>
+            <p>Address: Hamilton, New Jersey</p>
+        </section>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2025 Windows Technologies UA. All rights reserved.</p>
+    </footer>
+    <script>
+        function openForm() {
+            document.getElementById('form-container').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        }
+        function closeForm() {
+            document.getElementById('form-container').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+    </script>
+    
+</body>
+</html>
