@@ -122,7 +122,7 @@
 </header>
 
 <nav>
-    <a href="index.html">Home</a>
+    <a href="Head.html">Home</a>
     <a href="album.html">Album</a>
     <a href="#contact">Contact</a>
     <a href="javascript:void(0);" onclick="openPopup()">Blog</a> <!-- Updated button -->
@@ -131,18 +131,10 @@
 
 <div id="video-gallery" class="video-section">
     <h2>Video Gallery</h2>
-
-    <div class="photo-gallery">
-        <img src="images/photo1.jpg" alt="Window Design 1" class="gallery-img">
-        <img src="images/photo2.jpg" alt="Door Design 2" class="gallery-img">
-        <img src="images/photo3.jpg" alt="Curtain Design 3" class="gallery-img">
-    </div>
-    
     <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -187,6 +179,7 @@
         <label>Your message:</label>
         <textarea name="message" required></textarea>
         <button type="submit" class="btn">Submit</button>
+        <input type="hidden" name="_language" value="en" />
     </form>
 </div>
 
@@ -292,6 +285,8 @@
         }
     }
 </script>
-
+<footer class="footer">
+    <p>&copy; 2025 Windows Technologies UA. All rights reserved.</p>
+</footer>
 </body>
 </html>
